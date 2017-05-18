@@ -1,0 +1,93 @@
+An object couples data with behaviour.
+
+#+begin_src javascript
+  const object = {
+      datum1: 'value 1',
+      datum2: 'value 2',
+      method(param) {
+          this.datum1 = param + param;
+      }
+  };
+#+end_src
+
+Like global variables, methods implicitly depend on information defined
+outside of them.
+
+Functions explicitly receive the parameters they operate on. They are indepedent
+of their context.
+
+#+begin_src javascript
+  function doubleTheFunc(param) {
+      return param + param;
+  }
+#+end_src
+
+Multiple parameters can be represented as a collection.
+
+#+begin_src javascript
+  function func(params) {
+      return params.datum1 + params.datum2;
+  }
+#+end_src
+
+Multiple return values can be represented as a collection.
+
+#+begin_src javascript
+  function func(params) {
+      return {
+          sum: params.datum1 + params.datum2,
+          state: 'added params',
+  }
+#+end_src
+
+The output collection can be passed in as a parameter to simulate mutation.
+
+#+begin_src javascript
+  function func(read, write) {
+      write.sum = read.datum1 + read.datum2;
+      write.state = 'added params';
+  }
+#+end_src
+
+If the caller can arrange the inputs and outputs then the operation can be
+independent of the concrete data operated on.
+
+#+begin_src javascript
+  const read = {
+      get datum1() {
+          return parseFloat(document.querySelector('#Field-1').value, 10);
+      },
+      get datum2() {
+          return parseFloat(document.querySelector('#Field-2').value, 10);
+      }
+  };
+
+  const write = {
+      set sum(result) {
+          document.querySelector('#Result').value = result;
+      },
+      set state(str) {
+          document.querySelector('#Message').innerHTML = `<h1>${str}</h1>`;
+          if (str === 'added params') {
+              // log event on the server
+              // etc.
+          }
+      },
+  };
+
+  function add(read, write) {
+      write.sum = read.datum1 + read.datum2;
+      write.state = 'added params';
+  }
+
+  add(read, write);
+#+end_src
+
+The meaning of the operation is /independent/ from how the information is
+represented and it can be reused in other contexts.
+
+Like /materialized views/ in a database.
+
+* I feel good too Mr. Brown
+
+[[crowdsourcing-an-insult.org][What's the term for a person that has its own language?]]

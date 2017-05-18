@@ -1,0 +1,25 @@
+* The Unreasonable Effectiveness of Dynamic Typing for Practical Programs
+
+Video: https://vimeo.com/74354480
+
+Author did /his own research/ where he scanned github, 1.7 million repos, 3.6
+million issue to get some data.
+
+Python: Out of 670,000 issues only *3 percent* were type errors.
+
+For all the dynamic languages he checked only *2% of the errors* were *type errors*.
+
+Debug time of the exceptions that could have been caught by a type checker.\\
+*<* Time required to handle the type checker.
+
+*But...*
+
+C++ programs had the least number of errors.
+
+/What?/ C++ is too complex /and/ statically typed.
+
+Most used code bases (as libraries to other languages).
+
+Valuable to more projects. Under more scrutiny.
+
+[[swim-or-sink.org][Swim or sink?]]

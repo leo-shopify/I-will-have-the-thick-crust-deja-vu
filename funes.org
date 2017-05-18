@@ -1,0 +1,21 @@
+* Doubting Funes
+
+"The tale of one Ireneo Funes, who, after falling off his horse and receiving a
+bad head injury, acquired the amazing talent of remembering absolutely
+everything." [[https://en.wikipedia.org/wiki/Funes_the_Memorious][†]]
+
+Remembering a day took him one day.
+
+Every blade of grass was different than the others. Every instant of that blade
+was unique.
+
+There were no abstractions. Everything was concrete, unambiguous.
+
+He lost the ability to think and comunicate.
+
+Words and ideas are necessarily lossy representations.
+
+Maybe when writting programs we can't lose information, but perhaps we can gain
+something by controlling the way we arrange it?
+
+[[materialized-views.org][I started with nothing and still have most of it left.]]
